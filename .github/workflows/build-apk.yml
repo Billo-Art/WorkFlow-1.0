@@ -11,25 +11,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Mise en place du travail
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Mise en place Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
-      - name: Install dependencies
+      - name: Dépendances d'installation
         run: npm install
 
       - name: Installer Capacitor Android
         run: npm install @capacitor/android@7.6.8
 
-      - name: Setup Java
+      - name: Configuration de Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
 
       - name: Préparer les fichiers du site
         run: |

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>🤖 Assistant IA - WorkFlow</title>
+
+    <link rel="stylesheet"
+          href="assistant.css">
+
+    <link rel="manifest"
+          href="manifest.json">
+
+    <meta name="theme-color"
+          content="#2563eb">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            🚀 <span>WorkFlow</span>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    🏠 Accueil
+                </a>
+            </li>
+
+            <li>
+                <a href="favoris.html">
+                    ⭐ Favoris
+                </a>
+            </li>
+
+            <li>
+                <a href="assistant.html"
+                   class="actif">
+
+                    🤖 Assistant IA
+
+                </a>
+            </li>
+
+            <li>
+                <a href="parametres.html">
+
+                    ⚙️ Paramètres
+
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<main class="assistant-page">
+
+    <section class="chat">
+
+        <div class="chat-header">
+
+            <div class="ia-profil">
+
+                <div class="avatar">
+
+                    🤖
+
+                </div>
+
+                <div>
+
+                    <h2>
+
+                        Assistant IA WorkFlow
+
+                    </h2>
+
+                    <p>
+
+                        🟢 En ligne
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <button
+                id="nouvelleConversation">
+
+                🗑 Nouvelle conversation
+
+            </button>
+
+        </div>
+        <!-- ================= MESSAGES ================= -->
+
+        <div class="chat-box" id="chatBox">
+
+            <div class="message ia">
+
+                <div class="message-avatar">
+
+                    🤖
+
+                </div>
+
+                <div class="message-bulle">
+
+                    <h4>
+
+                        Assistant IA
+
+                    </h4>
+
+                    <p>
+
+                        👋 Bonjour <strong>Mohamed</strong> !
+
+                        Bienvenue sur <strong>WorkFlow</strong>.
+
+                    </p>
+
+                    <p>
+
+                        Je peux t'aider en :
+
+                    </p>
+
+                    <ul>
+
+                        <li>💻 Informatique</li>
+
+                        <li>🚀 Motivation</li>
+
+                        <li>📚 Études</li>
+
+                        <li>💼 Travail</li>
+
+                        <li>🌍 Culture générale</li>
+
+                        <li>❤️ Conseils</li>
+
+                    </ul>
+
+                    <span class="heure">
+
+                        Aujourd'hui • 22:00
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ================= ZONE DE SAISIE ================= -->
+
+        <div class="chat-input">
+
+            <input
+
+                type="text"
+
+                id="question"
+
+                placeholder="💬 Écris ton message..."
+
+                autocomplete="off"
+
+            >
+
+            <button
+
+                id="envoyer">
+
+                ➤
+
+            </button>
+
+        </div>
+        <!-- ================= INDICATEUR IA ================= -->
+
+        <div id="typingIndicator" class="typing-indicator">
+
+            <div class="typing-avatar">
+
+                🤖
+
+            </div>
+
+            <div class="typing-bulle">
+
+                <span></span>
+
+                <span></span>
+
+                <span></span>
+
+            </div>
+
+        </div>
+
+        <!-- ================= BOUTONS RAPIDES ================= -->
+
+        <div class="suggestions">
+
+            <button class="suggestion">
+
+                💻 Informatique
+
+            </button>
+
+            <button class="suggestion">
+
+                🚀 Motivation
+
+            </button>
+
+            <button class="suggestion">
+
+                📚 Études
+
+            </button>
+
+            <button class="suggestion">
+
+                💼 Travail
+
+            </button>
+
+            <button class="suggestion">
+
+                🌍 Culture
+
+            </button>
+
+            <button class="suggestion">
+
+                ❤️ Conseils
+
+            </button>
+
+        </div>
+
+    </section>
+
+</main>
+
+<script src="assistant.js"></script>
+</body>
+
+</html>

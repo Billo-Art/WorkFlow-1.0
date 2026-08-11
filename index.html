@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>🚀 WorkFlow - Citations Inspirantes</title>
+
+    <meta name="description"
+          content="WorkFlow - Inspire-toi, progresse et réussis grâce à des citations motivantes et un assistant IA.">
+
+    <meta name="theme-color"
+          content="#2563eb">
+
+    <meta name="mobile-web-app-capable"
+          content="yes">
+
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
+
+    <link rel="manifest"
+          href="manifest.json">
+
+    <link rel="stylesheet"
+          href="style.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<header>
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            <h2>🚀 WorkFlow</h2>
+
+        </div>
+
+        <ul class="menu">
+
+            <li>
+                <a href="index.html">
+                    🏠 Accueil
+                </a>
+            </li>
+
+            <li>
+                <a href="assistant.html">
+                    🤖 Assistant IA
+                </a>
+            </li>
+
+            <li>
+                <a href="favoris.html">
+                    ⭐ Favoris
+                </a>
+            </li>
+
+            <li>
+                <a href="apropos.html">
+                    📖 À propos
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    📞 Contact
+                </a>
+            </li>
+
+            <li>
+                <a href="parametres.html">
+                    ⚙️ Paramètres
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+<section class="hero">
+
+    <h1>
+        Inspire-toi.<br>
+        Développe-toi.<br>
+        Réussis.
+    </h1>
+
+    <p>
+
+        Bienvenue sur <strong>WorkFlow</strong>.<br>
+
+        Découvre chaque jour des citations inspirantes,
+        développe ta motivation et échange avec
+        ton Assistant IA.
+
+    </p>
+
+    <div class="hero-buttons">
+
+        <button onclick="nouvelleCitation()">
+
+            🚀 Découvrir une citation
+
+        </button>
+
+        <button onclick="window.location.href='assistant.html'">
+
+            🤖 Ouvrir l'Assistant IA
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= RECHERCHE ================= -->
+
+<section class="recherche">
+
+    <input
+        type="text"
+        id="recherche"
+        placeholder="🔍 Rechercher une citation...">
+
+    <button onclick="rechercherCitation()">
+
+        Rechercher
+
+    </button>
+
+</section>
+
+<!-- ================= CITATION ================= -->
+
+<section class="citation-section">
+
+    <div class="carte-citation">
+
+        <h2>
+
+            ✨ Citation du moment
+
+        </h2>
+
+        <p id="citation">
+
+            Clique sur « Découvrir une citation »
+
+        </p>
+
+        <h3 id="auteur">
+
+            — WorkFlow
+
+        </h3>
+
+        <div class="actions">
+
+            <button onclick="nouvelleCitation()">
+
+                🔄 Nouvelle citation
+
+            </button>
+
+            <button onclick="ajouterLike()">
+
+                ❤️ J'aime
+                (<span id="likes">0</span>)
+
+            </button>
+
+            <button onclick="ajouterFavori()">
+
+                ⭐ Favori
+
+            </button>
+
+            <button onclick="copierCitation()">
+
+                📋 Copier
+
+            </button>
+
+            <button onclick="partagerCitation()">
+
+                📤 Partager
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= COMMENTAIRES ================= -->
+
+<section class="commentaires">
+
+    <h2>
+
+        💬 Commentaires
+
+    </h2>
+
+    <button onclick="ajouterCommentaire()">
+
+        Ajouter un commentaire
+
+    </button>
+
+    <div id="listeCommentaires">
+
+    </div>
+
+</section>
+<!-- ================= CATÉGORIES ================= -->
+
+<section class="categories">
+
+    <h2>
+
+        📂 Catégories
+
+    </h2>
+
+    <div class="liste-categories">
+
+        <button onclick="afficherCategorie('Motivation')">
+
+            💪 Motivation
+
+        </button>
+
+        <button onclick="afficherCategorie('Succès')">
+
+            🏆 Succès
+
+        </button>
+
+        <button onclick="afficherCategorie('Discipline')">
+
+            🔥 Discipline
+
+        </button>
+
+        <button onclick="afficherCategorie('Sagesse')">
+
+            📚 Sagesse
+
+        </button>
+
+        <button onclick="afficherCategorie('Réalité')">
+
+            🌍 Réalité
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= STATISTIQUES ================= -->
+
+<section class="statistiques">
+
+    <h2>
+
+        📊 Statistiques
+
+    </h2>
+
+    <div class="stats">
+
+        <div class="stat-card">
+
+            <h3 id="totalCitations">
+
+                0
+
+            </h3>
+
+            <p>
+
+                Citations
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3 id="totalFavoris">
+
+                0
+
+            </h3>
+
+            <p>
+
+                Favoris
+
+            </p>
+
+        </div>
+
+        <div class="stat-card">
+
+            <h3 id="totalLikes">
+
+                0
+
+            </h3>
+
+            <p>
+
+                Likes
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= CITATION DU JOUR ================= -->
+
+<section class="citation-jour">
+
+    <h2>
+
+        🌟 Citation du jour
+
+    </h2>
+
+    <p>
+
+        Une pensée positive peut transformer une journée.
+        Continue d'apprendre, de progresser et de croire en toi.
+
+    </p>
+
+</section>
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="newsletter">
+
+    <h2>
+
+        📩 Reste inspiré
+
+    </h2>
+
+    <p>
+
+        Reçois les nouvelles citations, les nouveautés
+        et les prochaines fonctionnalités de WorkFlow.
+
+    </p>
+
+    <input
+        type="email"
+        id="email"
+        placeholder="Ton adresse e-mail">
+
+    <br><br>
+
+    <button onclick="inscriptionNewsletter()">
+
+        🚀 S'inscrire
+
+    </button>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-contenu">
+
+        <div class="footer-logo">
+
+            <h2>
+
+                🚀 WorkFlow
+
+            </h2>
+
+            <p>
+
+                Inspire-toi.
+                Progresse.
+                Réussis.
+
+            </p>
+
+        </div>
+
+        <div class="footer-menu">
+
+            <a href="index.html">
+
+                🏠 Accueil
+
+            </a>
+
+            <a href="assistant.html">
+
+                🤖 Assistant IA
+
+            </a>
+
+            <a href="favoris.html">
+
+                ⭐ Favoris
+
+            </a>
+
+            <a href="apropos.html">
+
+                📖 À propos
+
+            </a>
+
+            <a href="contact.html">
+
+                📞 Contact
+
+            </a>
+
+            <a href="parametres.html">
+
+                ⚙️ Paramètres
+
+            </a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+        © 2026 WorkFlow — Tous droits réservés.
+
+    </p>
+
+</footer>
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+    window.addEventListener("load", function () {
+
+        navigator.serviceWorker.register("service-worker.js")
+
+        .then(function () {
+
+            console.log("✅ WorkFlow est prêt !");
+
+        })
+
+        .catch(function (erreur) {
+
+            console.error("❌ Erreur Service Worker :", erreur);
+
+        });
+
+    });
+
+}
+
+</script>
+
+</body>
+
+</html>

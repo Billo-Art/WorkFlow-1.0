@@ -1,0 +1,27 @@
+{
+    "name": "WorkFlow - Citations Inspirantes",
+    "short_name": "WorkFlow",
+    "description": "Application de citations inspirantes.",
+    "start_url": "./index.html",
+    "scope": "./",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#000000",
+    "theme_color": "#2563eb",
+
+    "icons": [
+
+        {
+            "src": "sukuna.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+
+        {
+            "src": "sukuna.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+
+    ]
+}

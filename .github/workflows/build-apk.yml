@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Install Capacitor Android
+      - name: Installer Capacitor Android
         run: npm install @capacitor/android@7.6.8
 
       - name: Setup Java
@@ -31,17 +31,30 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      - name: Add Android platform
+      - name: Préparer les fichiers du site
+        run: |
+          mkdir -p www
+          rsync -av ./ www/ \
+            --exclude=www \
+            --exclude=android \
+            --exclude=node_modules \
+            --exclude=.git \
+            --exclude=.github \
+            --exclude=package.json \
+            --exclude=package-lock.json \
+            --exclude=capacitor.config.json
+
+      - name: Ajouter Android
         run: npx cap add android
 
-      - name: Sync Capacitor
+      - name: Synchroniser
         run: npx cap sync android
 
-      - name: Build APK
+      - name: Construire APK
         working-directory: android
         run: ./gradlew assembleDebug
 
-      - name: Upload APK
+      - name: Récupérer APK
         uses: actions/upload-artifact@v4
         with:
           name: WorkFlow-APK

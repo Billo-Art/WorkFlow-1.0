@@ -1,5 +1,5 @@
 {
   "appId": "com.workflow.app",
   "appName": "WorkFlow",
-  "webDir": "."
+  "webDir": "www"
 }
